@@ -44,7 +44,6 @@ wordList = set()
 fringe = [("",i) for i in range(len(wordPacks))]
 print("adding words, please be patient")
 #could add multiprocessing to have a loading timer or something
-start_time = time.time()
 while fringe:
     currNode = fringe.pop(0)
     currWord = currNode[0]
@@ -67,6 +66,7 @@ for word in wordList:
     #this will create a fringe that has the optimal word at the bottom
 count = 0
 removed = set()
+start_time = time.time()
 while finalFringe:
     if time.time() - start_time > TIMEOUT_THRESHOLD:
         print("Sorry, searching for more options will take too long, hope these options work!")
