@@ -68,7 +68,7 @@ count = 0
 removed = set()
 start_time = time.time()
 while finalFringe:
-    if time.time() - start_time > TIMEOUT_THRESHOLD:
+    if time.time() - start_time > TIMEOUT_THRESHOLD and count > 1:
         print("Sorry, searching for more options will take too long, hope these options work!")
         break
     currNode = finalFringe.pop(0)
